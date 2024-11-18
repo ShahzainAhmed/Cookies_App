@@ -1,6 +1,7 @@
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/views/home/widgets/small_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,13 +11,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 50.h),
-            ListTile(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 50.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: ListTile(
               contentPadding: EdgeInsets.zero,
               leading: CircleAvatar(
                 radius: 22.r,
@@ -33,15 +34,21 @@ class HomeScreen extends StatelessWidget {
                     .copyWith(color: AppColors.kWhiteColor),
               ),
             ),
-            SizedBox(height: 20.h),
-            Text(
+          ),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.only(left: 30.w),
+            child: Text(
               "Cookies",
               style: AppTypography.kLight36.copyWith(
                 color: AppColors.kWhiteColor,
                 height: 1.0,
               ),
             ),
-            Row(
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -60,60 +67,44 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 20.h),
-            Container(
-              padding: EdgeInsets.only(
-                left: 20.w,
-                right: 20.w,
-                top: 20.h,
-                bottom: 10.h,
-              ),
-              height: 130.h,
-              width: 140.w,
-              decoration: BoxDecoration(
-                color: AppColors.kGreyColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(16.r),
-                  topRight: Radius.circular(16.r),
-                  bottomRight: Radius.circular(80.r),
-                  bottomLeft: Radius.circular(16.r),
+          ),
+          SizedBox(height: 20.h),
+          SizedBox(
+            height: 130.h,
+            child: ListView.separated(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              separatorBuilder: (context, index) => SizedBox(width: 16.w),
+              itemBuilder: (context, index) {
+                return const SmallTile();
+              },
+              itemCount: 6,
+            ),
+          ),
+          SizedBox(height: 30.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Offers",
+                  style: AppTypography.kLight36.copyWith(
+                    color: AppColors.kWhiteColor,
+                    height: 1.0,
+                  ),
                 ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Chocolate chips",
-                    style: AppTypography.kLight16
-                        .copyWith(color: AppColors.kWhiteColor),
+                Text(
+                  "See more",
+                  style: AppTypography.kMedium14.copyWith(
+                    color: AppColors.kOrangeColor,
                   ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.diamond,
-                        color: AppColors.kOrangeColor,
-                        size: 20,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        "PREMIUM",
-                        style: AppTypography.kLight12.copyWith(
-                          color: AppColors.kOrangeColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "20 USD",
-                    style: AppTypography.kLight16
-                        .copyWith(color: AppColors.kWhiteColor),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
