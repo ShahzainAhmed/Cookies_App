@@ -1,3 +1,4 @@
+import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
 import 'package:flutter/material.dart';
@@ -10,21 +11,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 50.h),
             ListTile(
               contentPadding: EdgeInsets.zero,
-              leading: CircleAvatar(radius: 22.r),
+              leading: CircleAvatar(
+                radius: 22.r,
+                foregroundImage: const AssetImage(AppAssets.kProfilePic),
+              ),
               title: Text(
-                "James",
+                "Shahzain",
                 style: AppTypography.kMedium16
                     .copyWith(color: AppColors.kWhiteColor),
               ),
               subtitle: Text(
-                "Figueroa",
+                "Ahmed",
                 style: AppTypography.kLight14
                     .copyWith(color: AppColors.kWhiteColor),
               ),
@@ -58,7 +62,12 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.only(
+                left: 20.w,
+                right: 20.w,
+                top: 20.h,
+                bottom: 10.h,
+              ),
               height: 130.h,
               width: 140.w,
               decoration: BoxDecoration(
@@ -71,10 +80,32 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Chocolate chips",
+                    style: AppTypography.kLight16
+                        .copyWith(color: AppColors.kWhiteColor),
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.diamond,
+                        color: AppColors.kOrangeColor,
+                        size: 20,
+                      ),
+                      SizedBox(width: 6.w),
+                      Text(
+                        "PREMIUM",
+                        style: AppTypography.kLight12.copyWith(
+                          color: AppColors.kOrangeColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "20 USD",
                     style: AppTypography.kLight16
                         .copyWith(color: AppColors.kWhiteColor),
                   ),

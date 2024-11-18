@@ -1,3 +1,3 @@
 class AppAssets {
-  static const kOnboarding = 'assets/images/onboarding.png';
+  static const kProfilePic = 'assets/images/profile.jpeg';
 }
