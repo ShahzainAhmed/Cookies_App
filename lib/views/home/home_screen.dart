@@ -4,6 +4,7 @@ import 'package:coffee_app/resources/app_typography.dart';
 import 'package:coffee_app/views/home/widgets/small_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 130.h,
             child: ListView.separated(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) => SizedBox(width: 16.w),
@@ -100,8 +101,25 @@ class HomeScreen extends StatelessWidget {
                   style: AppTypography.kMedium14.copyWith(
                     color: AppColors.kOrangeColor,
                   ),
-                )
+                ),
               ],
+            ),
+          ),
+          SizedBox(height: 30.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: Container(
+              height: 100.h,
+              width: Get.width,
+              decoration: BoxDecoration(
+                color: AppColors.kGreyColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16.r),
+                  topRight: Radius.circular(16.r),
+                  bottomRight: Radius.circular(80.r),
+                  bottomLeft: Radius.circular(16.r),
+                ),
+              ),
             ),
           )
         ],
