@@ -64,6 +64,19 @@ class SmallTile extends StatelessWidget {
             right: 0,
             bottom: 120,
             child: Image.asset(smallTileModel.image),
+          ),
+          Positioned(
+            left: 80,
+            top: 80,
+            child: CircleAvatar(
+              radius: 20.r,
+              backgroundColor: AppColors.kBlackColor,
+              child: const Icon(
+                Icons.arrow_forward,
+                size: 22,
+                color: AppColors.kWhiteColor,
+              ),
+            ),
           )
         ],
       ),
