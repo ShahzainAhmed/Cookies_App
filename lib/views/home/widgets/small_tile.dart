@@ -27,6 +27,7 @@ class SmallTile extends StatelessWidget {
       ),
       child: Stack(
         clipBehavior: Clip.none,
+        
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

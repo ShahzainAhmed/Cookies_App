@@ -74,8 +74,8 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 130.h,
             child: ListView.separated(
-              // itemCount: smallTilesList.length,
-              itemCount: 2,
+              clipBehavior: Clip.none,
+              itemCount: smallTilesList.length,
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
