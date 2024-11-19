@@ -32,7 +32,7 @@ List tilesDataList = [
     image: AppAssets.kCookie2,
   ),
   TileModel(
-    title: "Chocolate chips",
+    title: "Chocolate \nchips",
     category: "PREMIUM",
     price: "20",
     oldPrice: "8",
