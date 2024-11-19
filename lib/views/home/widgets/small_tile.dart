@@ -27,7 +27,6 @@ class SmallTile extends StatelessWidget {
       ),
       child: Stack(
         clipBehavior: Clip.none,
-        
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,7 +54,7 @@ class SmallTile extends StatelessWidget {
                 ],
               ),
               Text(
-                smallTileModel.price,
+                "${smallTileModel.price} USD",
                 style: AppTypography.kLight16
                     .copyWith(color: AppColors.kWhiteColor),
               ),

@@ -18,19 +18,19 @@ List smallTilesList = [
   SmallTileModel(
     title: "Chocolate chips",
     category: "PREMIUM",
-    price: "20 USD",
+    price: "20",
     image: AppAssets.kCookie1,
   ),
   SmallTileModel(
-    title: "Oatmeal Raisin",
+    title: "Oatmeal \nwith raisins",
     category: "CLASSIC",
-    price: "18 USD",
+    price: "18",
     image: AppAssets.kCookie2,
   ),
   SmallTileModel(
     title: "Chocolate chips",
     category: "PREMIUM",
-    price: "20 USD",
+    price: "20",
     image: AppAssets.kCookie1,
   ),
 ];
