@@ -1,3 +1,4 @@
+import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class SmallTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding:
-          EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h, bottom: 10.h),
+          EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h, bottom: 10.h),
       height: 130.h,
       width: 140.w,
       decoration: BoxDecoration(
