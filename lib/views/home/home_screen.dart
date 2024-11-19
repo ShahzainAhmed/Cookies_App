@@ -90,6 +90,7 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
                   "Offers",
@@ -111,7 +112,8 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Container(
-              height: 100.h,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              height: 96.h,
               width: Get.width,
               decoration: BoxDecoration(
                 color: AppColors.kGreyColor,
@@ -121,6 +123,61 @@ class HomeScreen extends StatelessWidget {
                   bottomRight: Radius.circular(80.r),
                   bottomLeft: Radius.circular(16.r),
                 ),
+              ),
+              child: Row(
+                children: [
+                  Image.asset(AppAssets.kCookie1),
+                  SizedBox(width: 6.w),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Double \nchocolate",
+                        style: AppTypography.kLight16
+                            .copyWith(color: AppColors.kWhiteColor, height: 0),
+                      ),
+                      SizedBox(height: 4.h),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.diamond,
+                            color: AppColors.kOrangeColor,
+                            size: 20,
+                          ),
+                          SizedBox(width: 4.w),
+                          Text(
+                            "PREMIUM",
+                            style: AppTypography.kMedium12.copyWith(
+                              color: AppColors.kOrangeColor,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(width: 12.w),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 4.h),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "20 USD",
+                          style: AppTypography.kLight14.copyWith(
+                            color: AppColors.kWhiteColor,
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: AppColors.kWhiteColor,
+                          ),
+                        ),
+                        Text(
+                          "12 USD",
+                          style: AppTypography.kBold14
+                              .copyWith(color: AppColors.kWhiteColor),
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
             ),
           )

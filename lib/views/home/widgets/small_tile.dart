@@ -55,7 +55,7 @@ class SmallTile extends StatelessWidget {
               ),
               Text(
                 "${smallTileModel.price} USD",
-                style: AppTypography.kLight16
+                style: AppTypography.kBold14
                     .copyWith(color: AppColors.kWhiteColor),
               ),
             ],
