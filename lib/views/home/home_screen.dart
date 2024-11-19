@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 80.h),
+          SizedBox(height: 100.h),
           SizedBox(
             height: 130.h,
             child: ListView.separated(
