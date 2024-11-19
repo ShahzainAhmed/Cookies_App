@@ -27,58 +27,76 @@ class LargeTile extends StatelessWidget {
             bottomLeft: Radius.circular(16.r),
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Stack(
+          clipBehavior: Clip.none,
           children: [
-            Image.asset(tileModel.image),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  tileModel.title,
-                  style: AppTypography.kLight16
-                      .copyWith(color: AppColors.kWhiteColor, height: 0),
-                ),
-                SizedBox(height: 4.h),
-                Row(
+                Image.asset(tileModel.image),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(
-                      Icons.diamond,
-                      color: AppColors.kOrangeColor,
-                      size: 20,
-                    ),
-                    SizedBox(width: 4.w),
                     Text(
-                      tileModel.category,
-                      style: AppTypography.kMedium12.copyWith(
-                        color: AppColors.kOrangeColor,
-                      ),
+                      tileModel.title,
+                      style: AppTypography.kLight16
+                          .copyWith(color: AppColors.kWhiteColor, height: 0),
                     ),
+                    SizedBox(height: 4.h),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.diamond,
+                          color: AppColors.kOrangeColor,
+                          size: 20,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          tileModel.category,
+                          style: AppTypography.kMedium12.copyWith(
+                            color: AppColors.kOrangeColor,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 4.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "${tileModel.oldPrice} USD",
+                        style: AppTypography.kLight14.copyWith(
+                          color: AppColors.kWhiteColor,
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: AppColors.kWhiteColor,
+                        ),
+                      ),
+                      Text(
+                        "12 USD",
+                        style: AppTypography.kBold14
+                            .copyWith(color: AppColors.kWhiteColor),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 4.h),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${tileModel.oldPrice} USD",
-                    style: AppTypography.kLight14.copyWith(
-                      color: AppColors.kWhiteColor,
-                      decoration: TextDecoration.lineThrough,
-                      decorationColor: AppColors.kWhiteColor,
-                    ),
-                  ),
-                  Text(
-                    "12 USD",
-                    style: AppTypography.kBold14
-                        .copyWith(color: AppColors.kWhiteColor),
-                  )
-                ],
+            Positioned(
+              right: -40,
+              bottom: -20,
+              child: CircleAvatar(
+                radius: 20.r,
+                backgroundColor: AppColors.kBlackColor,
+                child: const Icon(
+                  Icons.arrow_forward,
+                  size: 22,
+                  color: AppColors.kWhiteColor,
+                ),
               ),
             )
           ],
