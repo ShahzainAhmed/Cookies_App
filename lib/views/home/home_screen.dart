@@ -111,6 +111,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             ListView.separated(
+              // reverse: true,
               padding: EdgeInsets.symmetric(vertical: 20.h),
               clipBehavior: Clip.none,
               separatorBuilder: (context, index) => SizedBox(height: 24.h),
