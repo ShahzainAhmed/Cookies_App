@@ -1,12 +1,11 @@
-import 'package:coffee_app/models/small_tile_model.dart';
-import 'package:coffee_app/resources/app_assets.dart';
+import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SmallTile extends StatelessWidget {
-  final SmallTileModel smallTileModel;
+  final TileModel smallTileModel;
   const SmallTile({super.key, required this.smallTileModel});
 
   @override
