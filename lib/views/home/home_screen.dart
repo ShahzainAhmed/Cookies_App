@@ -1,3 +1,4 @@
+import 'package:coffee_app/models/small_tile_model.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
@@ -72,25 +73,16 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 80.h),
           SizedBox(
             height: 130.h,
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                ListView.separated(
-                  itemCount: 4,
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  physics: const BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) => SizedBox(width: 16.w),
-                  itemBuilder: (context, index) {
-                    return const SmallTile();
-                  },
-                ),
-                Positioned(
-                  top: -80,
-                  left: 50,
-                  child: Image.asset(AppAssets.kCookie1, scale: 3.5),
-                )
-              ],
+            child: ListView.separated(
+              // itemCount: smallTilesList.length,
+              itemCount: 2,
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              separatorBuilder: (context, index) => SizedBox(width: 16.w),
+              itemBuilder: (context, index) {
+                return SmallTile(smallTileModel: smallTilesList[index]);
+              },
             ),
           ),
           SizedBox(height: 30.h),
