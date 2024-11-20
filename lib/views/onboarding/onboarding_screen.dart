@@ -112,19 +112,19 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: -20,
-            bottom: -30,
+            right: -22,
+            bottom: -40,
             child: Bounce(
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   CircleAvatar(
                     backgroundColor: AppColors.kBrownColor.withOpacity(0.5),
-                    radius: 70.r,
+                    radius: 80.r,
                   ),
                   CircleAvatar(
                     backgroundColor: AppColors.kLightBrownColor,
-                    radius: 60.r,
+                    radius: 70.r,
                     child: const Icon(
                       Icons.arrow_forward_ios,
                       color: AppColors.kWhiteColor,
