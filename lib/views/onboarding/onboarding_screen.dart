@@ -40,7 +40,7 @@ class OnboardingScreen extends StatelessWidget {
                     backgroundColor: AppColors.kLightBrownColor,
                     radius: 70.r,
                     child: const Icon(
-                      Icons.arrow_forward_ios,
+                      Icons.arrow_forward_ios_rounded,
                       color: AppColors.kWhiteColor,
                       size: 36,
                     ),
