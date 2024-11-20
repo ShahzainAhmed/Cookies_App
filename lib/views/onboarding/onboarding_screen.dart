@@ -29,27 +29,25 @@ class OnboardingScreen extends StatelessWidget {
           Positioned(
             right: -26,
             bottom: -46,
-            child: GestureDetector(
+            child: Bounce(
               onTap: () => Get.to(const HomeScreen()),
-              child: Bounce(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: AppColors.kBrownColor.withOpacity(0.5),
-                      radius: 84.r,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: AppColors.kBrownColor.withOpacity(0.35),
+                    radius: 84.r,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: AppColors.kLightBrownColor,
+                    radius: 70.r,
+                    child: const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: AppColors.kWhiteColor,
+                      size: 36,
                     ),
-                    CircleAvatar(
-                      backgroundColor: AppColors.kLightBrownColor,
-                      radius: 70.r,
-                      child: const Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: AppColors.kWhiteColor,
-                        size: 36,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
