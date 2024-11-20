@@ -58,11 +58,3 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
-/* 
- // PrimaryButton(
-                  //   onTap: () => Get.to(const HomeScreen()),
-                  //   text: "Browse Collection",
-                  //   color: AppColors.kWhiteColor,
-                  //   textColor: AppColors.kLightBlackColor,
-                  // ),
- */
