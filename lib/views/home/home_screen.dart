@@ -6,7 +6,6 @@ import 'package:coffee_app/views/home/widgets/large_tile.dart';
 import 'package:coffee_app/views/home/widgets/small_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,25 +17,53 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50.h),
+            SizedBox(height: 70.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: CircleAvatar(
-                  radius: 22.r,
-                  foregroundImage: const AssetImage(AppAssets.kProfilePic),
-                ),
-                title: Text(
-                  "Shahzain",
-                  style: AppTypography.kMedium16
-                      .copyWith(color: AppColors.kWhiteColor),
-                ),
-                subtitle: Text(
-                  "Ahmed",
-                  style: AppTypography.kLight14
-                      .copyWith(color: AppColors.kWhiteColor),
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 22.r,
+                        foregroundImage:
+                            const AssetImage(AppAssets.kProfilePic),
+                      ),
+                      SizedBox(width: 10.w), // Spacing between avatar and text
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Shahzain",
+                            style: AppTypography.kMedium16
+                                .copyWith(color: AppColors.kWhiteColor),
+                          ),
+                          Text(
+                            "Ahmed",
+                            style: AppTypography.kLight14
+                                .copyWith(color: AppColors.kWhiteColor),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Container(
+                    height: 60.h,
+                    width: 64.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.kWhiteColor,
+                      borderRadius: BorderRadius.circular(14.r),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("6", style: AppTypography.kExtraBold22),
+                        Text("Products", style: AppTypography.kMedium10),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 20.h),

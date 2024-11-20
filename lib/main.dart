@@ -1,5 +1,4 @@
 import 'package:coffee_app/resources/app_colors.dart';
-import 'package:coffee_app/views/home/home_screen.dart';
 import 'package:coffee_app/views/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
