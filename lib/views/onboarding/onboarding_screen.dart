@@ -27,7 +27,7 @@ class OnboardingScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: EdgeInsets.only(left: 24.w, right: 70.w, top: 22.h),
+              padding: EdgeInsets.only(left: 24.w, right: 70.w, top: 30.h),
               height: Get.height * 0.45,
               width: Get.width,
               decoration: const BoxDecoration(
