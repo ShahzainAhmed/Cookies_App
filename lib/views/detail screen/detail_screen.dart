@@ -1,4 +1,3 @@
-import 'package:cart_stepper/cart_stepper.dart';
 import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
