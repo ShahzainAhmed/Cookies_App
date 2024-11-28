@@ -1,4 +1,4 @@
-## Cookies App
+## Cookies App - Flutter
 
 ### LinkedIn Post:
 
