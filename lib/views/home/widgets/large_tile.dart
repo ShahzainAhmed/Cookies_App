@@ -39,9 +39,10 @@ class LargeTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tileModel.title,
+                      tileModel.title.replaceFirst(" ", "\n"),
                       style: AppTypography.kLight16
                           .copyWith(color: AppColors.kWhiteColor, height: 0),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 4.h),
                     Row(
@@ -77,7 +78,7 @@ class LargeTile extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "12 USD",
+                        "${tileModel.price} USD",
                         style: AppTypography.kBold14
                             .copyWith(color: AppColors.kWhiteColor),
                       )

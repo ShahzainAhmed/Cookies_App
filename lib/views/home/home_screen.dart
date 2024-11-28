@@ -2,10 +2,12 @@ import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/views/detail%20screen/detail_screen.dart';
 import 'package:coffee_app/views/home/widgets/large_tile.dart';
 import 'package:coffee_app/views/home/widgets/small_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                         foregroundImage:
                             const AssetImage(AppAssets.kProfilePic),
                       ),
-                      SizedBox(width: 10.w), // Spacing between avatar and text
+                      SizedBox(width: 10.w),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -110,7 +112,12 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 16.w),
                 itemBuilder: (context, index) {
-                  return SmallTile(smallTileModel: tilesDataList[index]);
+                  return SmallTile(
+                    onTap: () => Get.to(DetailScreen(
+                      tileModel: tilesDataList[index],
+                    )),
+                    smallTileModel: tilesDataList[index],
+                  );
                 },
               ),
             ),
@@ -138,7 +145,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             ListView.separated(
-              // reverse: true,
               padding: EdgeInsets.symmetric(vertical: 20.h),
               clipBehavior: Clip.none,
               separatorBuilder: (context, index) => SizedBox(height: 24.h),
