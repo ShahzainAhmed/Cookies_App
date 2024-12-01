@@ -113,9 +113,8 @@ class HomeScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(width: 16.w),
                 itemBuilder: (context, index) {
                   return SmallTile(
-                    onTap: () => Get.to(DetailScreen(
-                      tileModel: tilesDataList[index],
-                    )),
+                    onTap: () => Get.to(
+                        () => DetailScreen(tileModel: tilesDataList[index])),
                     smallTileModel: tilesDataList[index],
                   );
                 },
@@ -157,7 +156,7 @@ class HomeScreen extends StatelessWidget {
                 return LargeTile(
                   tileModel: tilesDataList[index],
                   onTap: () => Get.to(
-                    DetailScreen(tileModel: tilesDataList[index]),
+                    () => DetailScreen(tileModel: tilesDataList[index]),
                   ),
                 );
               },

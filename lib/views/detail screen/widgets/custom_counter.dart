@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +14,8 @@ class CustomCounter extends StatefulWidget {
 
 class _CustomCounterState extends State<CustomCounter> {
   int _counter = 1;
-  bool _isAddIconPressed = false;
-  bool _isRemoveIconPressed = false;
+  bool? _isAddIconPressed;
+  bool? _isRemoveIconPressed;
 
   void _incrementCounter() {
     setState(() {

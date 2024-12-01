@@ -30,7 +30,7 @@ class OnboardingScreen extends StatelessWidget {
             right: -26,
             bottom: -46,
             child: Bounce(
-              onTap: () => Get.to(const HomeScreen()),
+              onTap: () => Get.to(() => const HomeScreen()),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
