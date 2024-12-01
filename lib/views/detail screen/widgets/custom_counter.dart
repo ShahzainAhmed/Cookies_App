@@ -2,6 +2,7 @@
 
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/utils/app_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,13 +20,15 @@ class _CustomCounterState extends State<CustomCounter> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+      appState.setCounter = _counter;
     });
   }
 
-  void _decrementCounter() {
+  void _decrementCounter() async {
     setState(() {
       if (_counter > 0) {
         _counter--;
+        appState.setCounter = _counter;
       }
     });
   }

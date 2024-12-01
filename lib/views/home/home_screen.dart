@@ -3,6 +3,7 @@ import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/utils/app_state.dart';
 import 'package:coffee_app/views/detail%20screen/detail_screen.dart';
 import 'package:coffee_app/views/home/widgets/large_tile.dart';
 import 'package:coffee_app/views/home/widgets/small_tile.dart';
@@ -10,11 +11,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    int count = appState.counter;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -66,7 +73,8 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("6", style: AppTypography.kExtraBold22),
+                          Text(count.toString(),
+                              style: AppTypography.kExtraBold22),
                           Text("Products", style: AppTypography.kMedium10),
                         ],
                       ),
