@@ -38,7 +38,7 @@ class _CustomCounterState extends State<CustomCounter> {
         height: 50.h,
         decoration: BoxDecoration(
           color: AppColors.kOrangeColor,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(18),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
