@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
@@ -25,44 +26,50 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 22.r,
-                        foregroundImage:
-                            const AssetImage(AppAssets.kProfilePic),
+                  FadeInUp(
+                    duration: const Duration(milliseconds: 600),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 22.r,
+                          foregroundImage:
+                              const AssetImage(AppAssets.kProfilePic),
+                        ),
+                        SizedBox(width: 10.w),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Shahzain",
+                              style: AppTypography.kMedium16
+                                  .copyWith(color: AppColors.kWhiteColor),
+                            ),
+                            Text(
+                              "Ahmed",
+                              style: AppTypography.kLight14
+                                  .copyWith(color: AppColors.kWhiteColor),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  FadeInUp(
+                    duration: const Duration(milliseconds: 640),
+                    child: Container(
+                      height: 60.h,
+                      width: 64.w,
+                      decoration: BoxDecoration(
+                        color: AppColors.kWhiteColor,
+                        borderRadius: BorderRadius.circular(14.r),
                       ),
-                      SizedBox(width: 10.w),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Shahzain",
-                            style: AppTypography.kMedium16
-                                .copyWith(color: AppColors.kWhiteColor),
-                          ),
-                          Text(
-                            "Ahmed",
-                            style: AppTypography.kLight14
-                                .copyWith(color: AppColors.kWhiteColor),
-                          ),
+                          Text("6", style: AppTypography.kExtraBold22),
+                          Text("Products", style: AppTypography.kMedium10),
                         ],
                       ),
-                    ],
-                  ),
-                  Container(
-                    height: 60.h,
-                    width: 64.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.kWhiteColor,
-                      borderRadius: BorderRadius.circular(14.r),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("6", style: AppTypography.kExtraBold22),
-                        Text("Products", style: AppTypography.kMedium10),
-                      ],
                     ),
                   ),
                 ],
