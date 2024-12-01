@@ -92,13 +92,16 @@ class LargeTile extends StatelessWidget {
               Positioned(
                 right: -40,
                 bottom: -20,
-                child: CircleAvatar(
-                  radius: 20.r,
-                  backgroundColor: AppColors.kBlackColor,
-                  child: const Icon(
-                    Icons.arrow_forward,
-                    size: 22,
-                    color: AppColors.kWhiteColor,
+                child: GestureDetector(
+                  onTap: onTap,
+                  child: CircleAvatar(
+                    radius: 20.r,
+                    backgroundColor: AppColors.kBlackColor,
+                    child: const Icon(
+                      Icons.arrow_forward,
+                      size: 22,
+                      color: AppColors.kWhiteColor,
+                    ),
                   ),
                 ),
               )
