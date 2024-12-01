@@ -59,7 +59,12 @@ class _DetailScreenState extends State<DetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(child: Image.asset(widget.tileModel.image, scale: 1.6)),
+            Center(
+              child: SizedBox(
+                height: 200.h,
+                child: Image.asset(widget.tileModel.image, fit: BoxFit.cover),
+              ),
+            ),
             SizedBox(height: 20.h),
             Text(
               widget.tileModel.title,

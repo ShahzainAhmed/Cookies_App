@@ -149,11 +149,17 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.none,
               separatorBuilder: (context, index) => SizedBox(height: 24.h),
               physics: const ClampingScrollPhysics(),
+              reverse: true,
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: tilesDataList.length,
               itemBuilder: (context, index) {
-                return LargeTile(tileModel: tilesDataList[index]);
+                return LargeTile(
+                  tileModel: tilesDataList[index],
+                  onTap: () => Get.to(
+                    DetailScreen(tileModel: tilesDataList[index]),
+                  ),
+                );
               },
             ),
           ],

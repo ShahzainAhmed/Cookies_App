@@ -42,13 +42,13 @@ List tilesDataList = [
         "A hearty, wholesome treat made with oats, raisins, and a hint of cinnamon, perfect for a healthy snack or breakfast.",
   ),
   TileModel(
-    title: "Chocolate chips",
+    title: "Double Chocolate",
     category: "PREMIUM",
-    price: "15",
-    oldPrice: "20",
+  price: "30",
+    oldPrice: "45",
     ratingStars: 5,
-    image: AppAssets.kCookie1,
+    image: AppAssets.kCookie3,
     description:
-        "Our rich and indulgent chocolate chips cookies, made with premium ingredients for that perfect melt-in-your-mouth experience.",
+        "Packed with rich, velvety cocoa and studded with decadent chocolate chunks, each bite is an irresistible combination of sweetness and a deep, satisfying chocolate flavor.",
   ),
 ];
