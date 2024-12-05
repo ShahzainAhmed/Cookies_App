@@ -81,34 +81,40 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.only(left: 30.w),
-              child: Text(
-                "Cookies",
-                style: AppTypography.kLight36.copyWith(
-                  color: AppColors.kWhiteColor,
-                  height: 1.0,
+              child: FadeInUp(
+                duration: const Duration(milliseconds: 600),
+                child: Text(
+                  "Cookies",
+                  style: AppTypography.kLight36.copyWith(
+                    color: AppColors.kWhiteColor,
+                    height: 1.0,
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Premium",
-                    style: AppTypography.kLight28.copyWith(
-                      color: AppColors.kOrangeColor,
-                      height: 0,
+              child: FadeInUp(
+                duration: const Duration(milliseconds: 580),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Premium",
+                      style: AppTypography.kLight28.copyWith(
+                        color: AppColors.kOrangeColor,
+                        height: 0,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "See more",
-                    style: AppTypography.kMedium14.copyWith(
-                      color: AppColors.kOrangeColor,
-                    ),
-                  )
-                ],
+                    Text(
+                      "See more",
+                      style: AppTypography.kMedium14.copyWith(
+                        color: AppColors.kOrangeColor,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 100.h),
@@ -122,10 +128,13 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 separatorBuilder: (context, index) => SizedBox(width: 16.w),
                 itemBuilder: (context, index) {
-                  return SmallTile(
-                    onTap: () => Get.to(
-                        () => DetailScreen(tileModel: tilesDataList[index])),
-                    smallTileModel: tilesDataList[index],
+                  return FadeInUp(
+                    duration: const Duration(milliseconds: 540),
+                    child: SmallTile(
+                      onTap: () => Get.to(
+                          () => DetailScreen(tileModel: tilesDataList[index])),
+                      smallTileModel: tilesDataList[index],
+                    ),
                   );
                 },
               ),
@@ -133,43 +142,49 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 30.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    "Offers",
-                    style: AppTypography.kLight36.copyWith(
-                      color: AppColors.kWhiteColor,
-                      height: 1.0,
+              child: FadeInUp(
+                duration: const Duration(milliseconds: 580),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Offers",
+                      style: AppTypography.kLight36.copyWith(
+                        color: AppColors.kWhiteColor,
+                        height: 1.0,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "See more",
-                    style: AppTypography.kMedium14.copyWith(
-                      color: AppColors.kOrangeColor,
+                    Text(
+                      "See more",
+                      style: AppTypography.kMedium14.copyWith(
+                        color: AppColors.kOrangeColor,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            ListView.separated(
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              clipBehavior: Clip.none,
-              separatorBuilder: (context, index) => SizedBox(height: 24.h),
-              physics: const ClampingScrollPhysics(),
-              reverse: true,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: tilesDataList.length,
-              itemBuilder: (context, index) {
-                return LargeTile(
-                  tileModel: tilesDataList[index],
-                  onTap: () => Get.to(
-                    () => DetailScreen(tileModel: tilesDataList[index]),
-                  ),
-                );
-              },
+            FadeInUp(
+              duration: const Duration(milliseconds: 500),
+              child: ListView.separated(
+                padding: EdgeInsets.symmetric(vertical: 20.h),
+                clipBehavior: Clip.none,
+                separatorBuilder: (context, index) => SizedBox(height: 24.h),
+                physics: const ClampingScrollPhysics(),
+                reverse: true,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: tilesDataList.length,
+                itemBuilder: (context, index) {
+                  return LargeTile(
+                    tileModel: tilesDataList[index],
+                    onTap: () => Get.to(
+                      () => DetailScreen(tileModel: tilesDataList[index]),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
