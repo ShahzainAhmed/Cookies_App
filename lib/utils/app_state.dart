@@ -11,6 +11,10 @@ class AppState {
   int _counter = 0;
   int get counter => _counter;
   set setCounter(int count) => _counter = count;
+
+  int _product = 0;
+  int get product => _product;
+  set setProduct(int product) => _product = product;
 }
 
 final AppState appState = AppState();

@@ -1,8 +1,10 @@
 import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/utils/app_state.dart';
 import 'package:coffee_app/views/detail%20screen/widgets/custom_counter.dart';
 import 'package:coffee_app/views/detail%20screen/widgets/primary_button.dart';
+import 'package:coffee_app/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -101,8 +103,13 @@ class _DetailScreenState extends State<DetailScreen> {
           ],
         ),
       ),
-      bottomNavigationBar:
-          PrimaryButton(title: "Add to Cart", borderRadius: 30, onTap: () {}),
+      bottomNavigationBar: PrimaryButton(
+          title: "Add to Cart",
+          borderRadius: 30,
+          onTap: () {
+            appState.setProduct = appState.counter + appState.product;
+            Get.to(const HomeScreen());
+          }),
     );
   }
 }

@@ -9,11 +9,12 @@ class PrimaryButton extends StatelessWidget {
   final int borderRadius;
   final String title;
   final VoidCallback onTap;
-  const PrimaryButton(
-      {super.key,
-      required this.onTap,
-      required this.title,
-      required this.borderRadius});
+  const PrimaryButton({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.borderRadius,
+  });
 
   @override
   Widget build(BuildContext context) {
