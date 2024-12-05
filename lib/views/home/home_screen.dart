@@ -16,8 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    int count = appState.counter;
+    int productCount = appState.product;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -69,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(count.toString(),
+                          Text(productCount.toString(),
                               style: AppTypography.kExtraBold22),
                           Text("Products", style: AppTypography.kMedium10),
                         ],
