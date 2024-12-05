@@ -3,6 +3,7 @@ import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
+import 'package:coffee_app/routes/app_routes.dart';
 import 'package:coffee_app/utils/app_state.dart';
 import 'package:coffee_app/views/detail%20screen/detail_screen.dart';
 import 'package:coffee_app/views/home/widgets/large_tile.dart';
@@ -131,9 +132,11 @@ class HomeScreen extends StatelessWidget {
                   return FadeInUp(
                     duration: const Duration(milliseconds: 540),
                     child: SmallTile(
-                      onTap: () => Get.to(
-                          () => DetailScreen(tileModel: tilesDataList[index])),
                       smallTileModel: tilesDataList[index],
+                      onTap: () => Get.toNamed(
+                        AppRoutes.detailScreen,
+                        arguments: tilesDataList[index],
+                      ),
                     ),
                   );
                 },
@@ -179,8 +182,9 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return LargeTile(
                     tileModel: tilesDataList[index],
-                    onTap: () => Get.to(
-                      () => DetailScreen(tileModel: tilesDataList[index]),
+                    onTap: () => Get.toNamed(
+                      AppRoutes.detailScreen,
+                      arguments: tilesDataList[index],
                     ),
                   );
                 },

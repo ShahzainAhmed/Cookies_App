@@ -1,4 +1,5 @@
 import 'package:coffee_app/routes/app_routes.dart';
+import 'package:coffee_app/views/detail%20screen/detail_screen.dart';
 import 'package:coffee_app/views/home/home_screen.dart';
 import 'package:coffee_app/views/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.onboarding,
       page: () => const OnboardingScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.detailScreen,
+      page: () => const DetailScreen(),
     )
   ];
 }

@@ -12,14 +12,21 @@ import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 
 class DetailScreen extends StatefulWidget {
-  final TileModel tileModel;
-  const DetailScreen({super.key, required this.tileModel});
+  const DetailScreen({super.key});
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  late TileModel tileModel;
+
+  @override
+  void initState() {
+    tileModel = Get.arguments;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,24 +71,24 @@ class _DetailScreenState extends State<DetailScreen> {
             Center(
               child: SizedBox(
                 height: 200.h,
-                child: Image.asset(widget.tileModel.image, fit: BoxFit.cover),
+                child: Image.asset(tileModel.image, fit: BoxFit.cover),
               ),
             ),
             SizedBox(height: 20.h),
             Text(
-              widget.tileModel.title,
+              tileModel.title,
               style: AppTypography.kMedium26
                   .copyWith(color: AppColors.kWhiteColor),
             ),
             Text(
-              widget.tileModel.category,
+              tileModel.category,
               style: AppTypography.kLight20
                   .copyWith(color: AppColors.kOrangeColor),
             ),
             SizedBox(height: 4.h),
             RatingBar.builder(
               unratedColor: Colors.grey.withOpacity(0.7),
-              initialRating: widget.tileModel.ratingStars,
+              initialRating: tileModel.ratingStars,
               minRating: 1,
               direction: Axis.horizontal,
               allowHalfRating: true,
@@ -93,7 +100,7 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             SizedBox(height: 30.h),
             Text(
-              widget.tileModel.description,
+              tileModel.description,
               style:
                   AppTypography.kLight16.copyWith(color: AppColors.kWhiteColor),
             ),
