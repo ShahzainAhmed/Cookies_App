@@ -31,7 +31,7 @@ class OnboardingScreen extends StatelessWidget {
             right: -26,
             bottom: -46,
             child: Bounce(
-              onTap: () => Get.toNamed(AppRoutes.homescreen),
+              onTap: () => Get.offNamed(AppRoutes.homescreen),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
