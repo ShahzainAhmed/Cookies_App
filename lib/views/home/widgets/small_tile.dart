@@ -67,10 +67,7 @@ class SmallTile extends StatelessWidget {
               left: 0,
               right: 0,
               bottom: 120,
-              child: Hero(
-                tag: smallTileModel.image,
-                child: Image.asset(smallTileModel.image),
-              ),
+              child: Image.asset(smallTileModel.image),
             ),
             Positioned(
               left: 80,
