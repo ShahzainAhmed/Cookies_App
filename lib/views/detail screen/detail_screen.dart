@@ -44,6 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 setState(() {
                   animate = !animate;
                 });
+                await Future.delayed(const Duration(milliseconds: 800));
                 Get.back();
               },
               icon: const Icon(
@@ -99,7 +100,6 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
             ),
-            
             SizedBox(height: 20.h),
             FadeInUp(
               animate: animate,

@@ -11,9 +11,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool animate = true;
+  late AnimationController controller;
   @override
   Widget build(BuildContext context) {
     int productCount = appState.product;
@@ -29,7 +36,9 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FadeInUp(
-                    duration: const Duration(milliseconds: 600),
+                    animate: animate,
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 300),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -57,7 +66,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   FadeInUp(
-                    duration: const Duration(milliseconds: 640),
+                    animate: animate,
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 300),
                     child: Container(
                       height: 60.h,
                       width: 64.w,
@@ -82,7 +93,9 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 30.w),
               child: FadeInUp(
-                duration: const Duration(milliseconds: 600),
+                animate: animate,
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 400),
                 child: Text(
                   "Cookies",
                   style: AppTypography.kLight36.copyWith(
@@ -95,7 +108,9 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: FadeInUp(
-                duration: const Duration(milliseconds: 580),
+                animate: animate,
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 500),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +144,9 @@ class HomeScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(width: 16.w),
                 itemBuilder: (context, index) {
                   return FadeInUp(
-                    duration: const Duration(milliseconds: 540),
+                    animate: animate,
+                    controller: (controller) => controller = controller,
+                    delay: const Duration(milliseconds: 600),
                     child: SmallTile(
                       smallTileModel: tilesDataList[index],
                       onTap: () => Get.toNamed(
@@ -145,7 +162,9 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: FadeInUp(
-                duration: const Duration(milliseconds: 580),
+                animate: animate,
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 700),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -168,7 +187,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             FadeInUp(
-              duration: const Duration(milliseconds: 500),
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 800),
               child: ListView.separated(
                 padding: EdgeInsets.symmetric(vertical: 20.h),
                 clipBehavior: Clip.none,
