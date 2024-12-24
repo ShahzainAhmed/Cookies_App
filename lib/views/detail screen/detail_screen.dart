@@ -71,7 +71,10 @@ class _DetailScreenState extends State<DetailScreen> {
             Center(
               child: SizedBox(
                 height: 200.h,
-                child: Image.asset(tileModel.image, fit: BoxFit.cover),
+                child: Hero(
+                  tag: tileModel.image,
+                  child: Image.asset(tileModel.image, fit: BoxFit.cover),
+                ),
               ),
             ),
             SizedBox(height: 20.h),
