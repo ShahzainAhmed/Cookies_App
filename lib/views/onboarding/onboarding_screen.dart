@@ -2,7 +2,6 @@ import 'package:bounce/bounce.dart';
 import 'package:coffee_app/resources/app_assets.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/routes/app_routes.dart';
-import 'package:coffee_app/views/home/home_screen.dart';
 import 'package:coffee_app/views/onboarding/widgets/bottom_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
