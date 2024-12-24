@@ -46,6 +46,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   cart_stepper: ^4.3.0
   shared_preferences: ^2.3.3
+  change_app_package_name: ^1.4.0
 
 dev_dependencies:
   flutter_test:

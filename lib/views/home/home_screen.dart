@@ -5,7 +5,6 @@ import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
 import 'package:coffee_app/routes/app_routes.dart';
 import 'package:coffee_app/utils/app_state.dart';
-import 'package:coffee_app/views/detail%20screen/detail_screen.dart';
 import 'package:coffee_app/views/home/widgets/large_tile.dart';
 import 'package:coffee_app/views/home/widgets/small_tile.dart';
 import 'package:flutter/material.dart';
