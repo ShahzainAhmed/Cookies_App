@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:coffee_app/models/tile_model.dart';
 import 'package:coffee_app/resources/app_colors.dart';
 import 'package:coffee_app/resources/app_typography.dart';
@@ -27,38 +28,57 @@ class _DetailScreenState extends State<DetailScreen> {
     super.initState();
   }
 
+  bool animate = true;
+  late AnimationController controller;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () => Get.back(),
-            icon: const Icon(
-              Icons.arrow_back_ios_new,
-              color: AppColors.kOrangeColor,
-            )),
+        leading: FadeIn(
+          animate: animate,
+          controller: (controller) => controller = controller,
+          delay: const Duration(milliseconds: 300),
+          child: IconButton(
+              onPressed: () async {
+                setState(() {
+                  animate = !animate;
+                });
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: AppColors.kOrangeColor,
+              )),
+        ),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: LikeButton(
-              padding: EdgeInsets.zero,
-              size: 20,
-              circleColor: const CircleColor(
-                start: AppColors.kOrangeColor,
-                end: AppColors.kOrangeColor,
+            child: FadeIn(
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 300),
+              child: LikeButton(
+                padding: EdgeInsets.zero,
+                size: 20,
+                circleColor: const CircleColor(
+                  start: AppColors.kOrangeColor,
+                  end: AppColors.kOrangeColor,
+                ),
+                bubblesColor: const BubblesColor(
+                  dotPrimaryColor: AppColors.kOrangeColor,
+                  dotSecondaryColor: AppColors.kOrangeColor,
+                ),
+                likeBuilder: (bool isLiked) {
+                  return Icon(
+                    isLiked ? Icons.favorite_rounded : Icons.favorite_outline,
+                    color: isLiked
+                        ? AppColors.kOrangeColor
+                        : AppColors.kOrangeColor,
+                    size: 24,
+                  );
+                },
               ),
-              bubblesColor: const BubblesColor(
-                dotPrimaryColor: AppColors.kOrangeColor,
-                dotSecondaryColor: AppColors.kOrangeColor,
-              ),
-              likeBuilder: (bool isLiked) {
-                return Icon(
-                  isLiked ? Icons.favorite_rounded : Icons.favorite_outline,
-                  color:
-                      isLiked ? AppColors.kOrangeColor : AppColors.kOrangeColor,
-                  size: 24,
-                );
-              },
             ),
           )
         ],
@@ -69,57 +89,100 @@ class _DetailScreenState extends State<DetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-              child: SizedBox(
-                height: 200.h,
-                child: Hero(
-                  tag: tileModel.image,
+              child: FadeInUp(
+                animate: animate,
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 300),
+                child: SizedBox(
+                  height: 200.h,
                   child: Image.asset(tileModel.image, fit: BoxFit.cover),
                 ),
               ),
             ),
+            // Center(
+            //   child: SizedBox(
+            //     height: 200.h,
+            //     child: Hero(
+            //       tag: tileModel.image,
+            //       child: Image.asset(tileModel.image, fit: BoxFit.cover),
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: 20.h),
-            Text(
-              tileModel.title,
-              style: AppTypography.kMedium26
-                  .copyWith(color: AppColors.kWhiteColor),
+            FadeInUp(
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 400),
+              child: Text(
+                tileModel.title,
+                style: AppTypography.kMedium26
+                    .copyWith(color: AppColors.kWhiteColor),
+              ),
             ),
-            Text(
-              tileModel.category,
-              style: AppTypography.kLight20
-                  .copyWith(color: AppColors.kOrangeColor),
+            FadeInUp(
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 500),
+              child: Text(
+                tileModel.category,
+                style: AppTypography.kLight20
+                    .copyWith(color: AppColors.kOrangeColor),
+              ),
             ),
             SizedBox(height: 4.h),
-            RatingBar.builder(
-              unratedColor: Colors.grey.withOpacity(0.7),
-              initialRating: tileModel.ratingStars,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemSize: 18.0,
-              itemBuilder: (context, _) =>
-                  const Icon(Icons.star, color: AppColors.kOrangeColor),
-              onRatingUpdate: (rating) {},
+            FadeInUp(
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 600),
+              child: RatingBar.builder(
+                unratedColor: Colors.grey.withOpacity(0.7),
+                initialRating: tileModel.ratingStars,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemSize: 18.0,
+                itemBuilder: (context, _) =>
+                    const Icon(Icons.star, color: AppColors.kOrangeColor),
+                onRatingUpdate: (rating) {},
+              ),
             ),
             SizedBox(height: 30.h),
-            Text(
-              tileModel.description,
-              style:
-                  AppTypography.kLight16.copyWith(color: AppColors.kWhiteColor),
+            FadeInUp(
+              animate: animate,
+              controller: (controller) => controller = controller,
+              delay: const Duration(milliseconds: 700),
+              child: Text(
+                tileModel.description,
+                style: AppTypography.kLight16
+                    .copyWith(color: AppColors.kWhiteColor),
+              ),
             ),
             const Spacer(),
-            const Center(child: CustomCounter()),
+            Center(
+              child: FadeInUp(
+                animate: animate,
+                controller: (controller) => controller = controller,
+                delay: const Duration(milliseconds: 800),
+                child: const CustomCounter(),
+              ),
+            ),
             SizedBox(height: 40.h)
           ],
         ),
       ),
-      bottomNavigationBar: PrimaryButton(
-          title: "Add to Cart",
-          borderRadius: 30,
-          onTap: () {
-            appState.setProduct = appState.counter + appState.product;
-            Get.to(const HomeScreen());
-          }),
+      bottomNavigationBar: FadeInUp(
+        animate: animate,
+        controller: (controller) => controller = controller,
+        delay: const Duration(milliseconds: 900),
+        child: PrimaryButton(
+            title: "Add to Cart",
+            borderRadius: 30,
+            onTap: () {
+              appState.setProduct = appState.counter + appState.product;
+              Get.to(const HomeScreen());
+            }),
+      ),
     );
   }
 }
